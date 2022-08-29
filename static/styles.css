@@ -1,0 +1,26 @@
+*{
+    margin:0;
+    padding:0;
+    
+}
+
+body{
+    /* background-image: url('/static/visax-ra_EaaqxQVI-unsplash.jpg') ; */
+    /* background-color: black; */
+    background-position: center;
+    background-size: cover;
+}
+#about_me{
+    border-radius: 25px;
+    width: 1000px;
+    height: 700px;
+    background: #73AD21;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    
+    
+   
+}
