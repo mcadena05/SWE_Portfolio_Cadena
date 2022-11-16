@@ -14,6 +14,34 @@ def homepage():
 
     return render_template("homepage.html")
 
+@app.route("/contact", methods=["POST"])
+def contact_me():
+    # Send contact info
+
+    name = request.form.get("name")
+    email = request.form.get("email")
+    phone = request.form.get('phone')
+    city = request.form.get('city')
+    zip = request.form.get('zip')
+    message = request.form.get("message")  
+
+    s = smtplib.SMTP(host='smtp-relay.sendinblue.com', port=587)
+    s.starttls()
+    s.login('cadenamarlynn@gmail.com', 'TKbLGESCFdXVZO36')
+
+    msg = EmailMessage()
+    msg.set_content(f'Quote request from {email}, name = {name}, phone {phone},city= {city}, zip={zip} and the message is {message}'  )
+
+    
+    msg['Subject'] = ' Quote Request from Website'
+    msg['From'] = f'{email}'
+    msg['To'] = 'James <cadenamarlynn@gmail.com>'
+
+    s.send_message(msg)
+    s.quit()
+    
+    return redirect("/")
+
 
 
 
