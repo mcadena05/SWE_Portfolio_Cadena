@@ -13,3 +13,4 @@ pycipher==0.5.2
 argon2_cffi
 passlib
 gunicorn
+requests
