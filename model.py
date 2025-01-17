@@ -14,11 +14,6 @@ class User(db.Model):
     email = db.Column(db.String(100), nullable=False)
     message = db.Column(db.String(100), nullable=False)
     
-    
-
-
-
-
 
 def connect_to_db(flask_app, db_uri="postgresql:///my_garden", echo=True):
     flask_app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
